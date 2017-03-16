@@ -15,7 +15,7 @@ The iterative implementation of the NLM algorithm enables targeted removal of te
 
 The currently available implementation is limited to 8 bit, 16 bit, 32 bit greyscale image sequences and spatially uniform noise levels. We rarely use 2D, RGB or denoising of spatially varying noise, i.e. the code is less maintained.
 
-The noise level (s0 and s1) needs to be provided manually *before* and *after* the first denoising iteration. The easiest way to do this is to select (expected) uniform regions in the image and measure the standard deviation, run a single iteration of denoising  
+The noise level (s0 and s1) needs to be provided manually *before* and *after* the first denoising iteration. The easiest way to do this is to select (expected) uniform regions in the image and measure the standard deviation several times. Use a lower boundary estimate and run a single iteration of denoising before repeating the procedure to estimate s1.
 
 The program is best run from the command line by calling *microtomodenoise* with the following program arguments:
 
