@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="microtomodenoise" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/microtomodenoise" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-std=c++0x" />
+				</Compiler>
+				<Linker>
+					<Add library="gomp" />
+					<Add library="tiff" />
+					<Add library="boost_system" />
+					<Add library="boost_filesystem" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/microtomodenoise" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-std=c++0x" />
+					<Add option="-fopenmp" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="gomp" />
+					<Add library="tiff" />
+					<Add library="boost_system" />
+					<Add library="boost_filesystem" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="auxiliary.cpp" />
+		<Unit filename="auxiliary.h" />
+		<Unit filename="hdcommunication.cpp" />
+		<Unit filename="hdcommunication.h" />
+		<Unit filename="iternlm.cpp" />
+		<Unit filename="iternlm.h" />
+		<Unit filename="iternlm_prepare.cpp" />
+		<Unit filename="iternlm_prepare.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
