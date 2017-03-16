@@ -55,5 +55,5 @@ In preparation:
 * Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Reactive Infiltration Instability amplifies the Difference between Geometric and Reactive Surface Areas in Natural Porous Materials”.
 * Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Dissolved CO 2 stabilizes Dissolution Front and increases Breakthrough Porosity of Natural Porous Materials”.
 * Yang, Y.; Hakim, S. S.; Bruns, S.; Uesugi, K.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Wormholes grow along paths with Minimal Cumulative Surface”.
-* Yang, Y.; Hakim, S. S.; Bruns, S.; Rogowska, M.; Böhnert, S.; Hammel, J.; Stipp, S. L. S.; Sørensen, H. O. Energy Environ. Sci. 2017. “Direct Observation of coupled Geochemical and Geomechanical Impacts on Chalk Microstructural Evolution under elevated CO 2 pressure. Part I”.
+* Yang, Y.; Hakim, S. S.; Bruns, S.; Rogowska, M.; Böhnert, S.; Hammel, J.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Direct Observation of coupled Geochemical and Geomechanical Impacts on Chalk Microstructural Evolution under elevated CO 2 pressure. Part I”.
 * Yang, Y.; Hakim, S. S.; Bruns, S.; Rogowska, M.; Hammel, J.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Direct Observation of coupled Geochemical and Geomechanical Impacts on Chalk Microstructural Evolution under elevated CO 2 pressure. Part II”.
