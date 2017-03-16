@@ -36,7 +36,7 @@ Further optional arguments:
 | **-search0** |integer| (*optional*, default=10) radius of the search space in the first dimension|
 | **-search1** |integer| (*optional*, default=10) radius of the search space in the second dimension|
 | **-search2** |integer| (*optional*, default=5) radius of the search space in the third dimension|
-| **-r**|boolean|(*optional*, default=true) resumes the denoising operation. Set *false* to overwrite previously generateed results with different parameter settings.|
+| **-r**|boolean|(*optional*, default=true) resumes the denoising operation. Set *false* to overwrite previously generated results with different parameter settings.|
 | **--16bit**| | (*optional*) allows safing disk space by only generating 16bit results|
 | **-s**| double | set both noise levels at once. Equivalent to alpha=1|
 | **-fs**| integer| (*optional*) subset denoising, first slice|
