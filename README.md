@@ -41,3 +41,5 @@ Further optional arguments:
 | **-s**| double | set both noise levels at once. Equivalent to alpha=1|
 | **-fs**| integer| (*optional*) subset denoising, first slice|
 | **-ls**| integer| (*optional*) subset denoising, last slice|
+
+Please contact bruns@nano.ku.dk or osholm@nano.ku.dk for assistance, requests or recommendations.
