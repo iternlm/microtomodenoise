@@ -19,12 +19,25 @@ The noise level (s0 and s1) needs to be provided manually *before* and *after* t
 
 The program is best run from the command line by calling *microtomodenoise* with the following program arguments:
 
-
 | argument | value | explanation |
 |--------|------------------|-----------|
 | **-i** |/directory/with/noisy/images/| (*mandatory*) needs to contain a minimum of 3 images|
+| **-o** |/output/directory/| (*optional*) default output is 1 level above input directory. Separate outputs are generated for each iteration.|
 | **-s0**|double|(*mandatory*) initial noise standard deviation|
 | **-s1**|double|(*mandatory*) texture level = noise standard deviation after 1 denoising iteration|
 | **-iter**|integer|(*optional*, default=4) number of denoising iterations|
-| **-a**|0 > double >= 1|(*optional*, default=0.5) weighting parameter alpha for s0 and s1. Lower alphas preserve more detail.|
-|**-slices**|integer|(*optional*, default=11) amount of 3D information used for denoising the central slice. Default settings are high quality and requiring plenty of resources. Try reverting to 3 slices on older machines.|
+| **-a**|0 > double >= 1|(*optional*, default=0.5) weighting parameter alpha for s0 and s1. Lower alphas preserve more detail. Higher alphas impose stronger artefact removal.|
+|**-slices**|integer|(*optional*, default=11) amount of 3D information used for denoising the central slice. Default settings are high quality requiring plenty of resources. Try reverting to 3 slices on older machines.|
+
+Further optional arguments:
+
+| argument | value | explanation |
+|--------|------------------|-----------|
+| **-search0** |integer| (*optional*, default=10) radius of the search space in the first dimension|
+| **-search1** |integer| (*optional*, default=10) radius of the search space in the second dimension|
+| **-search2** |integer| (*optional*, default=5) radius of the search space in the third dimension|
+| **-r**|boolean|(*optional*, default=true) resumes the denoising operation. Set *false* to overwrite previously generateed results with different parameter settings.|
+| **--16bit**| | (*optional*) allows safing disk space by only generating 16bit results|
+| **-s**| double | set both noise levels at once. Equivalent to alpha=1|
+| **-fs**| integer| (*optional*) subset denoising, first slice|
+| **-ls**| integer| (*optional*) subset denoising, last slice|
