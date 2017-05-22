@@ -11,7 +11,7 @@ The denoiser is designed to handle correlated noise footprints characteristic to
 
 The iterative implementation of the NLM algorithm enables targeted removal of textures with few redundacies and low contrast-to-noise ratio. Such textures are characteristic to backproject noise and artefacts in high resolution tomography. A publication providing benchmark results and discussing the quality, implementation and range of application of the iterative NLM procedure is currently being reviewed. Please consider citing it when you decide to use the algorithm:
 
-[3] Bruns, S.; Stipp, S.L.S.; Sørensen, H.O. *Adv. Water Res.* **2016**, 105, 96-107. "Looking for the Signal: A Guide to Iterative Noise and Artefact Removal in X-ray Tomography Reconstructions of Porous Geomaterials", doi: [10.1016/j.advwatres.2017.04.020](http://dx.doi.org/10.1016/j.advwatres.2017.04.020).
+[3] Bruns, S.; Stipp, S.L.S.; Sørensen, H.O. *Adv. Water Res.* **2017**, 105, 96-107. "Looking for the Signal: A Guide to Iterative Noise and Artefact Removal in X-ray Tomography Reconstructions of Porous Geomaterials", doi: [10.1016/j.advwatres.2017.04.020](http://dx.doi.org/10.1016/j.advwatres.2017.04.020).
 
 The currently available implementation is limited to 8 bit, 16 bit, 32 bit greyscale image sequences and spatially uniform noise levels. We rarely use 2D, RGB or denoising of spatially varying noise, i.e. the code is less maintained.
 
