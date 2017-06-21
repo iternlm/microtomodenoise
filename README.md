@@ -46,14 +46,14 @@ Please contact bruns@nano.ku.dk or osholm@nano.ku.dk for assistance, requests or
 
 Applications in science:
 * Nielsen,M. S.; Munk, M. B.; Diaz, A.; Pedersen, E. B. L.; Holler, M.; Bruns, S.; Risbo, J.; Mortensen, K.; Feidenhans’l, R. K. *Food Structure* **2016**, 7, 21–28. “Ptychographic X-ray Computed Tomography of Extended Colloidal Networks in Food Emulsions”, doi: [10.1016/j.foostr.2016.01.001](http://dx.doi.org/10.1016/j.foostr.2016.01.001).
-* Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. *Adv. Water. Res.* **2017**, *under review*. “Properties of Porous Media determined using Greyscale Analysis of 3D Tomograms”.
+* Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. *Adv. Water. Res.* **2017**, 107, 32-42. “Statistical Representative Elementary Volumes of Porous Media determined using Greyscale Analysis of 3D Tomograms”, doi: [10.1016/j.advwatres.2017.06.002](https://doi.org/10.1016/j.advwatres.2017.06.002).
+* Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. *Environ. Sci. Technol.* **2017**, “Dissolved CO 2 stabilizes Dissolution Front and increases Breakthrough Porosity of Natural Porous Materials”, *accepted*.
 * Chavez Panduro, E. A.; Torsæter, M.; Gawel, K.; Bjørge, R.; Gibaud, A.; Yang, Y.; Bruns, S.; Zheng, Y.; Sørensen, H. O.; Breiby, D. *Environ. Sci. Technol.* **2017**, *under review*. “In-situ X-ray Tomography Study of Cement exposed to CO 2 Saturated Brine“.
-* Yousefi, N.; Wong, K.; Hosseinidoust, Z.; Sørensen, H.O.; Bruns, S.; Zheng, Y.; Tufenkji, N *Nat. Commun.* **2017** *submitted*. "Ultra-strong graphene oxide-cellulose nanocrystal nanohybrid sponges for efficient water treatment".
+* Yousefi, N.; Wong, K.; Hosseinidoust, Z.; Sørensen, H.O.; Bruns, S.; Zheng, Y.; Tufenkji, N *Adv. Funct. Mater.* **2017** *submitted*. "Ultra-strong graphene oxide-cellulose nanocrystal nanohybrid sponges for efficient water treatment".
 
 In preparation:
 * Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Patterns of Entropy Production in the Microstructural Development of North Sea Chalk”.
 * Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Reactive Infiltration Instability amplifies the Difference between Geometric and Reactive Surface Areas in Natural Porous Materials”.
-* Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Dissolved CO 2 stabilizes Dissolution Front and increases Breakthrough Porosity of Natural Porous Materials”.
 * Yang, Y.; Hakim, S. S.; Bruns, S.; Uesugi, K.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Wormholes grow along paths with Minimal Cumulative Surface”.
 * Yang, Y.; Hakim, S. S.; Bruns, S.; Rogowska, M.; Böhnert, S.; Hammel, J.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Direct Observation of coupled Geochemical and Geomechanical Impacts on Chalk Microstructural Evolution under elevated CO 2 pressure. Part I”.
 * Yang, Y.; Hakim, S. S.; Bruns, S.; Rogowska, M.; Hammel, J.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Direct Observation of coupled Geochemical and Geomechanical Impacts on Chalk Microstructural Evolution under elevated CO 2 pressure. Part II”.
