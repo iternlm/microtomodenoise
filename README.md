@@ -25,6 +25,8 @@ As of 06.12.2019 the prototype programs nanotomodenoise and microtomodenoise hav
 - incorporate automated noise estimation and various options for setting the noise and texture level (cf. below)
 - added basic support for Poisson noise corrupted 2D RGB TIF images in CPU mode
 
+## Benchmark figure goes here
+
 **Compilation**
 
 Required libraries are LibTiff and OpenMP. The source code should compile on most Linux distributions by providing the location of your nvcc compiler and the CUDA compute capability of your GPU in the script file *make_iternlm.sh*. Without the latter set the compute capability to 0. Execute with *sh make_iternlm.sh* which will provide an executable *iterNLM* in the same directory.
