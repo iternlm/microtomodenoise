@@ -42,10 +42,18 @@ The program is best run from the command line by calling *iterNLM* with the foll
 | **-i** |/directory/with/noisy/images/| (*mandatory*) needs to contain a minimum of 3 images|
 | **-o** |/output/directory/| (*optional*) default output is 1 level above input directory. Separate outputs are generated for each iteration.|
 | **-a**|0 > float >= 1|(*optional*, default=0.5) weighting parameter alpha for s0 and s1. Lower alphas preserve more detail. Higher alphas impose stronger artefact removal.|
+| **-noise** |string| (*optional*, default=z-adaptive) determines a mode for how the noise level is estimated (cf. below)|
 | **-search** |integer| (*optional*) set all dimensions of the search space to a uniform radius. 5 may be preferable when there is only backprojected noise and little artefacts.|
 |**--cleanup**|| (*optional*) only keep the final denoising result on the HDD. By default every iteration is exported.|
 
 The straightforward program call would thus be: *./iterNLM -i /directory/with/noisy/images/*
+
+Available modes for setting the noise and texture level (*-noise*):
+
+- *global* (calculates the variance in 2D patches and separates the result in two clusters. The lower value is the noise estimate.
+- *z-adaptive* (The same as above but instead of a uniform noise level a moving window of 100 slices is considered. Especially useful for zoom-tomography in irregular shaped samples
+- *semimanual* (Provide the noise level s0. A patch with a similar variance is selected and used to estimate the texture level.)
+- *manual* (Provide the noise level s0 and the texture level s1 manually.)
 
 **Denoiser Related Arguments**
 
@@ -67,7 +75,7 @@ The straightforward program call would thus be: *./iterNLM -i /directory/with/no
 
 | argument | value | explanation |
 |--------|------------------|-----------|
-| **-noise** |string| (*optional*, default=z-adaptive) determines how the noise level is estimated (cf. below)|
+| **-noise** |string| (*optional*, default=z-adaptive) determines a mode for how the noise level is estimated (cf. above)|
 |**-noiseshift**|float|(*optional*, default=1) shift the estimated noise level by noiseshift times the standard deviation of the noise estimate|
 | **-s** |float| (*optional*) set both noise levels at once. Equivalent to alpha=1|
 | **-s0**|float|(*optional*) allows setting the noise level manually|
@@ -75,13 +83,6 @@ The straightforward program call would thus be: *./iterNLM -i /directory/with/no
 | **-nsamples**|integer|(*optional*, default=1e5) number of samples drawn for estimating the noise level|
 |**-noisepatch**|integer|(*optional*, default=15) size of 2D window used for automatic noise estimation|
 |**--continuous**||update the noise estimate after every iteration and not only the first two (not recommended)|
-
-Available modes for setting the noise and texture level (-noise):
-
-- *global* (calculates the variance in 2D patches and separates the result in two clusters. The lower value is the noise estimate.
-- *z-adaptive* (The same as above but instead of a uniform noise level a moving window of 100 slices is considered. Especially useful for zoom-tomography in irregular shaped samples
-- *semimanual* (Provide the noise level s0. A patch with a similar variance is selected and used to estimate the texture level.)
-- *manual* (Provide the noise level s0 and the texture level s1 manually.)
 
 **Hardware Related Arguments**
 
