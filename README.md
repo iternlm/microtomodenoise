@@ -1,5 +1,3 @@
-## Being updated! New source files will be available on Monday!
-
 # iterNLM_v0.3
 
 ![alt tag](https://github.com/iternlm/microtomodenoise/blob/master/chalkdemo.png)
