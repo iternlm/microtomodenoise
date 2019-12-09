@@ -23,8 +23,7 @@ As of 06.12.2019 the prototype programs nanotomodenoise and microtomodenoise hav
 - incorporate automated noise estimation and various options for setting the noise and texture level (cf. below)
 - added basic support for Poisson noise corrupted 2D RGB TIF images in CPU mode
 
-![alt tag](https://github.com/iternlm/microtomodenoise/blob/master/iterNLM-Benchmark.png)
-**Figure 2:** Comparison of execution time for 4 iterations of iterative non-local means denoising with a 256x256x256 test case on different hardware. Runtimes of the previous prototype version are shown in blue. Runtimes for the current version iterNLM_v0.3 are shown in green for CPU mode and in orange for GPU mode. The latter depends massively on the compute capability of the GPU yielding a runtime of 8.5 s on a Tesla V100.
+![alt tag](https://github.com/iternlm/microtomodenoise/blob/master/iterNLM-Benchmark2.png)
 
 **Compilation**
 
@@ -122,13 +121,14 @@ Please contact bruns@nano.ku.dk or osholm@nano.ku.dk for assistance, requests or
 Applications in science:
 * Nielsen,M. S.; Munk, M. B.; Diaz, A.; Pedersen, E. B. L.; Holler, M.; Bruns, S.; Risbo, J.; Mortensen, K.; Feidenhans’l, R. K. *Food Structure* **2016**, 7, 21–28. “Ptychographic X-ray Computed Tomography of Extended Colloidal Networks in Food Emulsions”, doi: [10.1016/j.foostr.2016.01.001](http://dx.doi.org/10.1016/j.foostr.2016.01.001).
 * Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. *Adv. Water. Res.* **2017**, 107, 32-42. “Statistical Representative Elementary Volumes of Porous Media determined using Greyscale Analysis of 3D Tomograms”, doi: [10.1016/j.advwatres.2017.06.002](https://doi.org/10.1016/j.advwatres.2017.06.002).
-* Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. *Environ. Sci. Technol.* **2017**, “Dissolved CO 2 stabilizes Dissolution Front and increases Breakthrough Porosity of Natural Porous Materials”, *accepted*.
-* Chavez Panduro, E. A.; Torsæter, M.; Gawel, K.; Bjørge, R.; Gibaud, A.; Yang, Y.; Bruns, S.; Zheng, Y.; Sørensen, H. O.; Breiby, D. *Environ. Sci. Technol.* **2017**, *under review*. “In-situ X-ray Tomography Study of Cement exposed to CO 2 Saturated Brine“.
-* Yousefi, N.; Wong, K.; Hosseinidoust, Z.; Sørensen, H.O.; Bruns, S.; Zheng, Y.; Tufenkji, N *Adv. Funct. Mater.* **2017** *submitted*. "Ultra-strong graphene oxide-cellulose nanocrystal nanohybrid sponges for efficient water treatment".
+* Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. *Environ. Sci. Technol.* **2017**, 51(14), 7982-7991, “Dissolved CO 2 stabilizes Dissolution Front and increases Breakthrough Porosity of Natural Porous Materials”, doi: [10.1021/acs.est.7b02157](https://doi.org/10.1021/acs.est.7b02157).
+* Chavez Panduro, E. A.; Torsæter, M.; Gawel, K.; Bjørge, R.; Gibaud, A.; Yang, Y.; Bruns, S.; Zheng, Y.; Sørensen, H. O.; Breiby, D. *Environ. Sci. Technol.* **2017**, 51(16), 9344-9351. “In-situ X-ray Tomography Study of Cement exposed to CO 2 Saturated Brine“, doi: [10.1021/acs.est.6b06534](https://doi.org/10.1021/acs.est.6b06534).
+* Yousefi, N.; Wong, K.; Hosseinidoust, Z.; Sørensen, H.O.; Bruns, S.; Zheng, Y.; Tufenkji, N *Nanoscale* **2018**, 10(15), 7171-7184. "Ultra-strong graphene oxide-cellulose nanocrystal nanohybrid sponges for efficient water treatment", doi: [10.1039/c7nr09037d](https://doi.org/10.1039/c7nr09037d).
+* Yang, Y.; Bruns, S.; Rogowska, M.; Hakim, S. S.; Hammel, J.; Stipp, S. L. S.; Sørensen, H. O. *Sci. Rep.* **2018**, 8, 5693. “Retraction of the Dissolution Front in Natural Porous Media”, doi: [10.1038/s41598-018-23823-3](https://doi.org/10.1038/s41598-018-23823-3).
+* Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. *Adv. Water. Res.* **2018**, 115, 151-159. “Impact of microstructure evolution on the difference between geometric and reactive surface areas in natural chalk”., doi: [10.1016/j.advwatres.2018.03.005](https://doi.org/10.1016/j.advwatres.2018.03.005).
+* Yang, Y.; Hakim, S. S.; Bruns, S.; Rogowska, M.; Böhnert, S.; Hammel, J.; Stipp, S. L. S.; Sørensen, H. O. *ACS Earth Space Chem.* **2018**, 2(6), 618-633. “Direct Observation of Coupled Geochemical and Geomechanical Impacts on Chalk Microstructure Evolution under Elevated CO2 Pressure”, doi: [10.1021/acsearthspacechem.8b00013](https://doi.org/10.1021/acsearthspacechem.8b00013).
+* Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. *PLoS One* **2018**. “Patterns of entropy production in dissolving natural porous media with flowing fluid”, doi: [10.1371/journal.pone.0204165](https://doi.org/10.1371/journal.pone.0204165).
+* Yang, Y.; Rogowska, M.; Zheng, Y.; Bruns, S.; Gundlach, C.; Stipp, S. L. S.; Sørensen, H. O. *J. Hydrol.* **2019**, 571, 21-35. “Transient increase in reactive surface and the macroscopic Damkohler number in chalk dissolution”, doi: [10.1016/j.jhydrol.2019.01.032](https://doi.org/10.1016/j.jhydrol.2019.01.032).
+* Yang, Y.; Hakim, S. S.; Bruns, S.; Uesugi, K.; Stipp, S. L. S.; Sørensen, H. O. *Water Resour. Res.* **2019**, 55(6), 4801-4819. “Effect of Cumulative Surface on Pore Development in Chalk”, doi: [10.1029/2018WR023756](https://doi.org/10.1029/2018WR023756).
 
-In preparation:
-* Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Patterns of Entropy Production in the Microstructural Development of North Sea Chalk”.
-* Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Reactive Infiltration Instability amplifies the Difference between Geometric and Reactive Surface Areas in Natural Porous Materials”.
-* Yang, Y.; Hakim, S. S.; Bruns, S.; Uesugi, K.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Wormholes grow along paths with Minimal Cumulative Surface”.
-* Yang, Y.; Hakim, S. S.; Bruns, S.; Rogowska, M.; Böhnert, S.; Hammel, J.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Direct Observation of coupled Geochemical and Geomechanical Impacts on Chalk Microstructural Evolution under elevated CO 2 pressure. Part I”.
-* Yang, Y.; Hakim, S. S.; Bruns, S.; Rogowska, M.; Hammel, J.; Stipp, S. L. S.; Sørensen, H. O. **2017**. “Direct Observation of coupled Geochemical and Geomechanical Impacts on Chalk Microstructural Evolution under elevated CO 2 pressure. Part II”.
+
