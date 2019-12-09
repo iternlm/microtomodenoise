@@ -55,7 +55,7 @@ The program is best run from the command line by calling *iterNLM* with the foll
 |--------|------------------|-----------|
 | **-i** |/directory/with/noisy/images/| (*mandatory*) input directory with tiff image sequence|
 | **-o** |/output/directory/| (*optional*) default output is 1 level above input directory. Separate outputs are generated for each iteration.|
-| **-a**|0 > float >= 1|(*optional*, default=0.5) weighting parameter alpha for s0 and s1. Lower alphas preserve more detail. Higher alphas impose stronger artefact removal.|
+| **-a**|0 > float >= 1|(*optional*, default=0.5) weighting parameter alpha for *s0* and *s1*. Lower alphas preserve more detail. Higher alphas impose stronger artefact removal.|
 | **-noise** |string| (*optional*, default=z-adaptive) determines a mode for how the noise level is estimated (cf. below)|
 | **-search** |integer| (*optional*) set all dimensions of the search space to a uniform radius. 5 may be preferable when there is only backprojected noise and little artefacts.|
 |**--cleanup**|| (*optional*) only keep the final denoising result on the HDD. By default every iteration is exported.|
@@ -68,10 +68,10 @@ The straightforward program call would thus be:
 
 Available modes for setting the noise and texture level (*-noise*):
 
-- *global* (calculates the variance in 2D patches and separates the result in two clusters. The lower value is the noise estimate.
-- *z-adaptive* (The same as above but instead of a uniform noise level a moving window of 100 slices is considered. Especially useful for zoom-tomography in irregular shaped samples
-- *semimanual* (Provide the noise level s0. A patch with a similar variance is selected and used to estimate the texture level.)
-- *manual* (Provide the noise level s0 and the texture level s1 manually.)
+- *global* (calculates the variance in 2D patches and separates the result in two clusters. The lower value is the noise estimate.)
+- *z-adaptive* (The same as above but instead of a uniform noise level a moving window of 100 slices is considered. Especially useful for zoom-tomography in irregular shaped samples.)
+- *semimanual* (Provide the noise level *s0*. A patch with a similar variance is selected and used to estimate the texture level.)
+- *manual* (Provide the noise level *s0* and the texture level *s1* manually.)
 
 #
 
@@ -80,7 +80,7 @@ Available modes for setting the noise and texture level (*-noise*):
 | argument | value | explanation |
 |--------|------------------|-----------|
 | **-iter**|integer|(*optional*, default=4) number of denoising iterations|
-| **-a**|0 > float >= 1|(*optional*, default=0.5) weighting parameter alpha for s0 and s1. Lower alphas preserve more detail. Higher alphas impose stronger artefact removal.|
+| **-a**|0 > float >= 1|(*optional*, default=0.5) weighting parameter alpha for *s0* and *s1*. Lower alphas preserve more detail. Higher alphas impose stronger artefact removal.|
 |**-slices**|integer|(*optional*, default=11) amount of 3D information used for denoising the central slice. Default settings are high quality requiring plenty of resources. 7 or 5 are usually sufficient for avoiding artefacts in z-direction. Try reverting to 3 slices on older machines.|
 | **-search0** |integer| (*optional*, default=10) radius of the search space in the first dimension|
 | **-search1** |integer| (*optional*, default=10) radius of the search space in the second dimension|
