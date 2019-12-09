@@ -5,14 +5,15 @@
 This repository provides C++ and CUDA C++ source code and a UNIX build for iterative nonlocal means denoising (iterNLM).
 The denoiser is designed to handle correlated noise footprints characteristic to postreconstruction denoising problems of tomography reconstructions. It is based on the works by Antoni Buades et al.:
 
-[1] Buades, A.; Coll, B.; Morel, J.M. *Multiscale Model. Simul.* **2005**, 4(2), 490–530. "A review of image denoising algorithms, with a new one", doi: [10.1137/040616024](http://dx.doi.org/10.1137/040616024).
+1. Buades, A.; Coll, B.; Morel, J.M. *Multiscale Model. Simul.* **2005**, 4(2), 490–530. "A review of image denoising algorithms, with a new one", doi: [10.1137/040616024](http://dx.doi.org/10.1137/040616024).
 
-[2] Coupé, P.; Yger, P.; Prima, S.; Hellier, P.; Kervrann, C.; Barillot, C. *IEEE T. Med. Imaging* **2008**, 27(4), 425–441. "An optimized blockwise nonlocal means denoising filter for 3-D magnetic resonance images", doi: [10.1109/TMI.2007.906087](http://dx.doi.org/10.1109/TMI.2007.906087).
+2. Coupé, P.; Yger, P.; Prima, S.; Hellier, P.; Kervrann, C.; Barillot, C. *IEEE T. Med. Imaging* **2008**, 27(4), 425–441. "An optimized blockwise nonlocal means denoising filter for 3-D magnetic resonance images", doi: [10.1109/TMI.2007.906087](http://dx.doi.org/10.1109/TMI.2007.906087).
 
 The iterative implementation of the NLM algorithm enables targeted removal of textures with few redundacies and low contrast-to-noise ratio. Such textures are characteristic to backprojected noise and artefacts in high resolution tomography. A publication providing benchmark results and discussing the quality, implementation and range of application of the iterative NLM procedure has been published in *Advances in Water Resources*. Please consider citing it when you decide to use the algorithm:
 
-[3] Bruns, S.; Stipp, S.L.S.; Sørensen, H.O. *Adv. Water Res.* **2017**, 105, 96-107. "Looking for the Signal: A Guide to Iterative Noise and Artefact Removal in X-ray Tomography Reconstructions of Porous Geomaterials", doi: [10.1016/j.advwatres.2017.04.020](http://dx.doi.org/10.1016/j.advwatres.2017.04.020).
+3. Bruns, S.; Stipp, S.L.S.; Sørensen, H.O. *Adv. Water Res.* **2017**, 105, 96-107. "Looking for the Signal: A Guide to Iterative Noise and Artefact Removal in X-ray Tomography Reconstructions of Porous Geomaterials", doi: [10.1016/j.advwatres.2017.04.020](http://dx.doi.org/10.1016/j.advwatres.2017.04.020).
 
+#
 
 **Changelog**
 
@@ -26,11 +27,13 @@ As of 06.12.2019 the prototype programs nanotomodenoise and microtomodenoise hav
 
 ![alt tag](https://github.com/iternlm/microtomodenoise/blob/master/iterNLM-Benchmark2.png)
 
+#
 
 **Compilation**
 
 Required libraries are LibTiff and OpenMP. The source code should compile on most Linux distributions by providing the location of your nvcc compiler and the CUDA compute capability of your GPU in the script file *make_iternlm.sh*. Without the latter set the compute capability to 0. Execute with *sh make_iternlm.sh* which will provide an executable *iterNLM* in the same directory.
 
+#
 
 **Usage**
 
@@ -40,6 +43,7 @@ It is not necessary to set the noise level manually but when using a manual nois
 
 The program is best run from the command line by calling *iterNLM* with the following program arguments:
 
+#
 
 **Basic Arguments**
 
@@ -61,6 +65,7 @@ Available modes for setting the noise and texture level (*-noise*):
 - *semimanual* (Provide the noise level s0. A patch with a similar variance is selected and used to estimate the texture level.)
 - *manual* (Provide the noise level s0 and the texture level s1 manually.)
 
+#
 
 **Denoiser Related Arguments**
 
@@ -78,6 +83,7 @@ Available modes for setting the noise and texture level (*-noise*):
 | **-patch2** |integer| (*optional*, default=1) radius of the patch space in the third dimension|
 | **-patch** |integer| (*optional*) set all dimensions to a uniform radius. For soft tissue images a value of 2 or 3 may (or may not) be more suited|
 
+#
 
 **Noise Level Related Arguments**
 
@@ -92,6 +98,7 @@ Available modes for setting the noise and texture level (*-noise*):
 |**-noisepatch**|integer|(*optional*, default=15) size of 2D window used for automatic noise estimation|
 |**--continuous**||update the noise estimate after every iteration and not only the first two (not recommended)|
 
+#
 
 **Hardware Related Arguments**
 
@@ -105,6 +112,7 @@ Available modes for setting the noise and texture level (*-noise*):
 |**--v**|| (*optional*) verbose mode currently only provides an estimate of the memory requirement in CPU mode. Might be helpful if you encounter crashes.|
 |**-threads**|integer| (*optional*, default=128) sets threadsPerBlock in CUDA. No reason to touch this.|
 
+#
 
 **Arguments Related to 2D RGB Denoising Only**
 
@@ -115,6 +123,7 @@ Available modes for setting the noise and texture level (*-noise*):
 |**--noaverage**||by default the noise level is averaged across all channels. Keep an individual estimate for each channel with this option|
 |**--independent**||by default image similarity is measured across R,G and B channel. Choose this option for denoising them independently|
 
+#
 
 **Further Optional Arguments**
 
@@ -125,9 +134,11 @@ Available modes for setting the noise and texture level (*-noise*):
 | **-fs**| integer| (*optional*) subset denoising, first slice|
 | **-ls**| integer| (*optional*) subset denoising, last slice|
 
+#
 
 Please contact bruns@nano.ku.dk or osholm@nano.ku.dk for assistance, requests or recommendations.
 
+#
 
 Applications in science:
 * Nielsen,M. S.; Munk, M. B.; Diaz, A.; Pedersen, E. B. L.; Holler, M.; Bruns, S.; Risbo, J.; Mortensen, K.; Feidenhans’l, R. K. *Food Structure* **2016**, 7, 21–28. “Ptychographic X-ray Computed Tomography of Extended Colloidal Networks in Food Emulsions”, doi: [10.1016/j.foostr.2016.01.001](http://dx.doi.org/10.1016/j.foostr.2016.01.001).
