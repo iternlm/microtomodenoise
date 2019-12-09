@@ -31,7 +31,11 @@ As of 06.12.2019 the prototype programs nanotomodenoise and microtomodenoise hav
 
 **Compilation**
 
-Required libraries are LibTiff and OpenMP. The source code should compile on most Linux distributions by providing the location of your nvcc compiler and the CUDA compute capability of your GPU in the script file *make_iternlm.sh*. Without the latter set the compute capability to 0. Execute with *sh make_iternlm.sh* which will provide an executable *iterNLM* in the same directory.
+Required libraries are LibTiff and OpenMP. The source code should compile on most Linux distributions by providing the **location of your nvcc compiler** and the **CUDA compute capability** of your GPU in the script file *make_iternlm.sh*. Without the latter set the compute capability to 0. Execute with 
+
+***<p align="center"> sh make_iternlm.sh </p>***
+
+which will provide an executable *iterNLM* in the same directory.
 
 #
 
@@ -39,7 +43,7 @@ Required libraries are LibTiff and OpenMP. The source code should compile on mos
 
 The currently available implementation is limited to 8 bit, 16 bit, 32 bit greyscale TIF image sequences and spatially uniform noise levels in XY. With default settings the noise level is evaluated with a z-adaptive moving window. ImageJ 3D tifs are supported but require the *--blocks* option in CPU mode. We rarely use 2D, RGB or denoising of spatially varying noise, i.e. the code is less maintained.
 
-It is not necessary to set the noise level manually but when using a manual noise estimate the noise level (s0) and texture level (s1) need to be provided manually *before* and *after* the first denoising iteration. The easiest way to do this is to select (expected) uniform regions in the image and measure the standard deviation several times. Use a lower boundary estimate and run a single iteration of denoising before repeating the procedure to estimate s1.
+It is not necessary to set the noise level manually but when using a manual noise estimate the noise level (*s0*) and texture level (*s1*) need to be provided manually *before* and *after* the first denoising iteration. The easiest way to do this is to select (expected) uniform regions in the image and measure the standard deviation several times. Use a lower boundary estimate and run a single iteration of denoising before repeating the procedure to estimate *s1*.
 
 The program is best run from the command line by calling *iterNLM* with the following program arguments:
 
@@ -56,7 +60,11 @@ The program is best run from the command line by calling *iterNLM* with the foll
 | **-search** |integer| (*optional*) set all dimensions of the search space to a uniform radius. 5 may be preferable when there is only backprojected noise and little artefacts.|
 |**--cleanup**|| (*optional*) only keep the final denoising result on the HDD. By default every iteration is exported.|
 
-The straightforward program call would thus be: *./iterNLM -i /directory/with/noisy/images/*
+The straightforward program call would thus be: 
+
+***<p align="center"> ./iterNLM -i /directory/with/noisy/images/ </p>***
+
+
 
 Available modes for setting the noise and texture level (*-noise*):
 
