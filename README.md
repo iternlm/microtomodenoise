@@ -23,7 +23,8 @@ As of 06.12.2019 the prototype programs nanotomodenoise and microtomodenoise hav
 - incorporate automated noise estimation and various options for setting the noise and texture level (cf. below)
 - added basic support for Poisson noise corrupted 2D RGB TIF images in CPU mode
 
-## Benchmark figure goes here
+![alt tag](https://github.com/iternlm/microtomodenoise/blob/master/iterNLM-Benchmark.png)
+**Figure 2:** Comparison of execution time for 4 iterations of iterative non-local means denoising with a 256x256x256 test case on different hardware. Runtimes of the previous prototype version are shown in blue. Runtimes for the current version iterNLM_v0.3 are shown in green for CPU mode and in orange for GPU mode. The latter depends massively on the compute capability of the GPU yielding a runtime of 8.5 s on a Tesla V100.
 
 **Compilation**
 
