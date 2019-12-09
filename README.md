@@ -13,6 +13,7 @@ The iterative implementation of the NLM algorithm enables targeted removal of te
 
 [3] Bruns, S.; Stipp, S.L.S.; Sørensen, H.O. *Adv. Water Res.* **2017**, 105, 96-107. "Looking for the Signal: A Guide to Iterative Noise and Artefact Removal in X-ray Tomography Reconstructions of Porous Geomaterials", doi: [10.1016/j.advwatres.2017.04.020](http://dx.doi.org/10.1016/j.advwatres.2017.04.020).
 
+
 **Changelog**
 
 As of 06.12.2019 the prototype programs nanotomodenoise and microtomodenoise have been replace by iterNLM_v0.3 with the following changes and improvements:
@@ -25,9 +26,11 @@ As of 06.12.2019 the prototype programs nanotomodenoise and microtomodenoise hav
 
 ![alt tag](https://github.com/iternlm/microtomodenoise/blob/master/iterNLM-Benchmark2.png)
 
+
 **Compilation**
 
 Required libraries are LibTiff and OpenMP. The source code should compile on most Linux distributions by providing the location of your nvcc compiler and the CUDA compute capability of your GPU in the script file *make_iternlm.sh*. Without the latter set the compute capability to 0. Execute with *sh make_iternlm.sh* which will provide an executable *iterNLM* in the same directory.
+
 
 **Usage**
 
@@ -36,6 +39,7 @@ The currently available implementation is limited to 8 bit, 16 bit, 32 bit greys
 It is not necessary to set the noise level manually but when using a manual noise estimate the noise level (s0) and texture level (s1) need to be provided manually *before* and *after* the first denoising iteration. The easiest way to do this is to select (expected) uniform regions in the image and measure the standard deviation several times. Use a lower boundary estimate and run a single iteration of denoising before repeating the procedure to estimate s1.
 
 The program is best run from the command line by calling *iterNLM* with the following program arguments:
+
 
 **Basic Arguments**
 
@@ -57,6 +61,7 @@ Available modes for setting the noise and texture level (*-noise*):
 - *semimanual* (Provide the noise level s0. A patch with a similar variance is selected and used to estimate the texture level.)
 - *manual* (Provide the noise level s0 and the texture level s1 manually.)
 
+
 **Denoiser Related Arguments**
 
 | argument | value | explanation |
@@ -73,6 +78,7 @@ Available modes for setting the noise and texture level (*-noise*):
 | **-patch2** |integer| (*optional*, default=1) radius of the patch space in the third dimension|
 | **-patch** |integer| (*optional*) set all dimensions to a uniform radius. For soft tissue images a value of 2 or 3 may (or may not) be more suited|
 
+
 **Noise Level Related Arguments**
 
 | argument | value | explanation |
@@ -86,6 +92,7 @@ Available modes for setting the noise and texture level (*-noise*):
 |**-noisepatch**|integer|(*optional*, default=15) size of 2D window used for automatic noise estimation|
 |**--continuous**||update the noise estimate after every iteration and not only the first two (not recommended)|
 
+
 **Hardware Related Arguments**
 
 | argument | value | explanation |
@@ -98,6 +105,7 @@ Available modes for setting the noise and texture level (*-noise*):
 |**--v**|| (*optional*) verbose mode currently only provides an estimate of the memory requirement in CPU mode. Might be helpful if you encounter crashes.|
 |**-threads**|integer| (*optional*, default=128) sets threadsPerBlock in CUDA. No reason to touch this.|
 
+
 **Arguments Related to 2D RGB Denoising Only**
 
 | argument | value | explanation |
@@ -106,6 +114,7 @@ Available modes for setting the noise and texture level (*-noise*):
 |**--nopoisson**||when images are corrupted with Gaussian noise only|
 |**--noaverage**||by default the noise level is averaged across all channels. Keep an individual estimate for each channel with this option|
 |**--independent**||by default image similarity is measured across R,G and B channel. Choose this option for denoising them independently|
+
 
 **Further Optional Arguments**
 
@@ -116,7 +125,9 @@ Available modes for setting the noise and texture level (*-noise*):
 | **-fs**| integer| (*optional*) subset denoising, first slice|
 | **-ls**| integer| (*optional*) subset denoising, last slice|
 
+
 Please contact bruns@nano.ku.dk or osholm@nano.ku.dk for assistance, requests or recommendations.
+
 
 Applications in science:
 * Nielsen,M. S.; Munk, M. B.; Diaz, A.; Pedersen, E. B. L.; Holler, M.; Bruns, S.; Risbo, J.; Mortensen, K.; Feidenhans’l, R. K. *Food Structure* **2016**, 7, 21–28. “Ptychographic X-ray Computed Tomography of Extended Colloidal Networks in Food Emulsions”, doi: [10.1016/j.foostr.2016.01.001](http://dx.doi.org/10.1016/j.foostr.2016.01.001).
