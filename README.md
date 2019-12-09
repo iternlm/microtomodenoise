@@ -12,10 +12,8 @@ The denoiser is designed to handle correlated noise footprints characteristic to
 The iterative implementation of the NLM algorithm enables targeted removal of textures with few redundacies and low contrast-to-noise ratio. Such textures are characteristic to backprojected noise and artefacts in high resolution tomography. A publication providing benchmark results and discussing the quality, implementation and range of application of the iterative NLM procedure has been published in *Advances in Water Resources*. Please consider citing it when you decide to use the algorithm:
 
 3. Bruns, S.; Stipp, S.L.S.; Sørensen, H.O. *Adv. Water Res.* **2017**, 105, 96-107. "Looking for the Signal: A Guide to Iterative Noise and Artefact Removal in X-ray Tomography Reconstructions of Porous Geomaterials", doi: [10.1016/j.advwatres.2017.04.020](http://dx.doi.org/10.1016/j.advwatres.2017.04.020).
-
 #
-
-**Changelog**
+### Changelog
 
 As of 06.12.2019 the prototype programs nanotomodenoise and microtomodenoise have been replace by iterNLM_v0.3 with the following changes and improvements:
 - severly reduced memory requirements
@@ -26,30 +24,24 @@ As of 06.12.2019 the prototype programs nanotomodenoise and microtomodenoise hav
 - added basic support for Poisson noise corrupted 2D RGB TIF images in CPU mode
 
 ![alt tag](https://github.com/iternlm/microtomodenoise/blob/master/iterNLM-Benchmark2.png)
-
 #
-
-**Compilation**
+### Compilation
 
 Required libraries are LibTiff and OpenMP. The source code should compile on most Linux distributions by providing the **location of your nvcc compiler** and the **CUDA compute capability** of your GPU in the script file *make_iternlm.sh*. Without the latter set the compute capability to 0. Execute with 
 
 ***<p align="center"> sh make_iternlm.sh </p>***
 
 which will provide an executable *iterNLM* in the same directory.
-
 #
-
-**Usage**
+### Usage
 
 The currently available implementation is limited to 8 bit, 16 bit, 32 bit greyscale TIF image sequences and spatially uniform noise levels in XY. With default settings the noise level is evaluated with a z-adaptive moving window. ImageJ 3D tifs are supported but require the *--blocks* option in CPU mode. We rarely use 2D, RGB or denoising of spatially varying noise, i.e. the code is less maintained.
 
 It is not necessary to set the noise level manually but when using a manual noise estimate the noise level (*s0*) and texture level (*s1*) need to be provided manually *before* and *after* the first denoising iteration. The easiest way to do this is to select (expected) uniform regions in the image and measure the standard deviation several times. Use a lower boundary estimate and run a single iteration of denoising before repeating the procedure to estimate *s1*.
 
 The program is best run from the command line by calling *iterNLM* with the following program arguments:
-
 #
-
-**Basic Arguments**
+### Basic Arguments
 
 | argument | value | explanation |
 |--------|------------------|-----------|
@@ -74,8 +66,7 @@ Available modes for setting the noise and texture level (*-noise*):
 - *manual* (Provide the noise level *s0* and the texture level *s1* manually.)
 
 #
-
-**Denoiser Related Arguments**
+### Denoiser Related Arguments
 
 | argument | value | explanation |
 |--------|------------------|-----------|
@@ -92,8 +83,7 @@ Available modes for setting the noise and texture level (*-noise*):
 | **-patch** |integer| (*optional*) set all dimensions to a uniform radius. For soft tissue images a value of 2 or 3 may (or may not) be more suited|
 
 #
-
-**Noise Level Related Arguments**
+### Noise Level Related Arguments
 
 | argument | value | explanation |
 |--------|------------------|-----------|
@@ -107,8 +97,7 @@ Available modes for setting the noise and texture level (*-noise*):
 |**--continuous**||update the noise estimate after every iteration and not only the first two (not recommended)|
 
 #
-
-**Hardware Related Arguments**
+### Hardware Related Arguments
 
 | argument | value | explanation |
 |--------|------------------|-----------|
@@ -121,8 +110,7 @@ Available modes for setting the noise and texture level (*-noise*):
 |**-threads**|integer| (*optional*, default=128) sets threadsPerBlock in CUDA. No reason to touch this.|
 
 #
-
-**Arguments Related to 2D RGB Denoising Only**
+### Arguments Related to 2D RGB Denoising Only
 
 | argument | value | explanation |
 |--------|------------------|-----------|
@@ -132,8 +120,7 @@ Available modes for setting the noise and texture level (*-noise*):
 |**--independent**||by default image similarity is measured across R,G and B channel. Choose this option for denoising them independently|
 
 #
-
-**Further Optional Arguments**
+### Further Optional Arguments
 
 | argument | value | explanation |
 |--------|------------------|-----------|
