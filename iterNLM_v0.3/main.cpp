@@ -30,7 +30,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	string inpath = "";
+	string inpath = "/home/stefan/Documents/Adrian/debug3/";
 	string outpath = "";
 
 	bool verbose = false;
@@ -70,6 +70,10 @@ int main(int argc, char* argv[])
 			else if ((string(argv[i]) == "--16bit")) params.io.save_type = "16bit";
 			else if ((string(argv[i]) == "--cleanup")) params.io.cleanup = true;
 			else if ((string(argv[i]) == "--color") || (string(argv[i]) == "--rgb")) params.io.rgb = true;
+			else if ((string(argv[i]) == "-aniso") || (string(argv[i]) == "-anisotropy")){
+				i++;
+				params.z_anisotropy = atof(argv[i]); //when the voxels size differs in z-direction
+			}
 			//Denoising
 			/////////////////////////////////////////////////////////////////////
 			else if((string(argv[i]) == "-maxiter") || (string(argv[i]) == "-iter") || (string(argv[i]) == "-iterations")){
@@ -251,6 +255,8 @@ int main(int argc, char* argv[])
 	cout << "patch_radius: " << params.radius_patchspace[0] << " " << params.radius_patchspace[1] << " " << params.radius_patchspace[2] << std::endl;
 	cout << "noise estimate: " << params.noiselevel.mode << std::endl;
 	cout << "image shape: " << shape[0] << "x" << shape[1] << "x" << shape[2] << std::endl;
+	if (params.z_anisotropy != 1.f)
+		cout << "vxl anisotropy: " << params.z_anisotropy << std::endl;
 	cout << "--------------------------------------------------" << endl;
 
 	denoise::IterativeNLM_CPU iternlm;
@@ -341,7 +347,7 @@ int main(int argc, char* argv[])
 
 			iternlm_gpu.Run_GaussianNoise(1, instack, shape, &params);
 
-			if((!params.io.cleanup || params.maxiterations == 1) && !iternlm_gpu.resumed){
+			if(!iternlm_gpu.resumed){
 				iternlm_gpu.get_result(output, shape);
 				if (params.io.save_type == "16bit") hdcom.SaveTifSequence_as16bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
 				else hdcom.SaveTifSequence_32bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
@@ -354,7 +360,7 @@ int main(int argc, char* argv[])
 
 			iternlm_gpu.Run_GaussianNoise_GPUBlocks(1, instack, output, shape, &params);
 
-			if((!params.io.cleanup || params.maxiterations == 1) && !iternlm_gpu.resumed){
+			if(!iternlm_gpu.resumed){
 				if (params.io.save_type == "16bit") hdcom.SaveTifSequence_as16bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
 				else hdcom.SaveTifSequence_32bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
 			}
@@ -381,18 +387,14 @@ int main(int argc, char* argv[])
 		{
 			output = iternlm.Run_GaussianNoise_unrolled(1, instack, output, sigma0, shape, &params);
 
-			if(!params.io.cleanup || params.maxiterations == 1){
-				if (params.io.save_type == "16bit") hdcom.SaveTifSequence_as16bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
-				else hdcom.SaveTifSequence_32bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
-			}
+			if (params.io.save_type == "16bit") hdcom.SaveTifSequence_as16bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
+			else hdcom.SaveTifSequence_32bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
 		}
 		else{
 			output = iternlm.Run_GaussianNoise(1, instack, output, sigma0, shape, &params);
-			if(!params.io.cleanup || params.maxiterations == 1){
-				if (params.io.save_type == "16bit") hdcom.SaveTifSequence_as16bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
-				else hdcom.SaveTifSequence_32bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
 
-			}
+			if (params.io.save_type == "16bit") hdcom.SaveTifSequence_as16bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
+			else hdcom.SaveTifSequence_32bit(params.io.firstslice, output, shape, params.io.active_outpath, "denoised", false);
 		}
 	}
 	/////////////////////////////////////////////////////////////////////

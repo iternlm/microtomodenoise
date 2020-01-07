@@ -16,6 +16,8 @@ namespace protocol
 		int radius_patchspace[3] = {1, 1, 1}; //Radius of spherical patch space by axis.
 		float beta = 1.f; //allows to change the smoothing parameter
 
+		float z_anisotropy = 1.f;
+
 		struct NoiseLevel
 		{
 			std::string mode = "z-adaptive"; //how to estimate the noise level: "z-adaptive", "global", "manual", "semimanual"
