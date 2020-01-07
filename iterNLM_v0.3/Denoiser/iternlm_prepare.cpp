@@ -222,6 +222,8 @@ namespace denoise
 		int nsize_patch = 1;
 		float maxweight = 0.0f;
 
+		float sq_anisotropy = params->z_anisotropy * params->z_anisotropy;
+
 		for (long long int idx_patch = 0; idx_patch < nstack_patch; idx_patch++)
 		{
 			int zp = idx_patch/nslice_patch;
@@ -237,7 +239,7 @@ namespace denoise
 			if (((xp/rxp)*(xp/rxp)+(yp/ryp)*(yp/ryp)+(zp/rzp)*(zp/rzp)) <= 1.f)
 			{
 				//std::cout << xp << " " << yp << " " << zp << std::endl;
-				float euclideandistance = sqrtf((xp*xp)+(yp*yp)+(zp*zp));
+				float euclideandistance = sqrtf((xp*xp)+(yp*yp)+(zp*zp)*sq_anisotropy);
 				float this_distance = 1.f/((2.f*euclideandistance+1.f)*(2.f*euclideandistance+1.f)); //apply distance function of choice
 
 				if(this_distance > maxweight) maxweight = this_distance;
