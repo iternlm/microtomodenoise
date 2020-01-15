@@ -48,7 +48,7 @@ The program is best run from the command line by calling *iterNLM* with the foll
 | **-i** |/directory/with/noisy/images/| (*mandatory*) input directory with tiff image sequence|
 | **-o** |/output/directory/| (*optional*) default output is 1 level above input directory. Separate outputs are generated for each iteration.|
 | **-a**|0 > float >= 1|(*optional*, default=0.5) weighting parameter alpha for *s0* and *s1*. Lower alphas preserve more detail. Higher alphas impose stronger artefact removal.|
-| **-noise** |string| (*optional*, default=z-adaptive) determines a mode for how the noise level is estimated (cf. below)|
+| **-noise** |string| (*optional*, default=z-adaptive, valid=global, z-adaptive, semimanual or manual) determines a mode for how the noise level is estimated (cf. below)|
 | **-search** |integer| (*optional*) set all dimensions of the search space to a uniform radius. 5 may be preferable when there is only backprojected noise and little artefacts.|
 |**--cleanup**|| (*optional*) only keep the final denoising result on the HDD. By default every iteration is exported.|
 
