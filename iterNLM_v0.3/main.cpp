@@ -30,7 +30,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	string inpath = "/home/stefan/Documents/Adrian/debug3/";
+	string inpath = "";
 	string outpath = "";
 
 	bool verbose = false;
@@ -202,6 +202,11 @@ int main(int argc, char* argv[])
 			}
 			else if (string(argv[i]) == "--nopoisson") params.color.stabilize_variance = false;
 			else if (string(argv[i]) == "--noaverage") params.color.average_channelsigma = false;
+			else if (string(argv[i]) == "-h" || string(argv[i]) == "-help" || string(argv[i]) == "--help")
+			{
+				cout << "Instructions for using iterNLM_v0.3 are provided on https://github.com/iternlm/microtomodenoise" << endl;
+				return 0;
+			}
 			/////////////////////////////////////////////////////////////////////
 			else if (inpath.length() == 0) inpath = string(argv[i]);
 		}
@@ -232,6 +237,19 @@ int main(int argc, char* argv[])
 	bool is_rgb;
 	vector<string> filelist = hdcom.GetFilelist_And_ImageSequenceDimensions(inpath, shape, is_rgb);
 	vector<string> filelist_prev;
+
+	if (filelist[0] == "missing")
+	{
+		cout << "Error! Directory or file not found! Please provide a valid input with the -i argument "
+				"or check https://github.com/iternlm/microtomodenoise for further instruction" << endl;
+		return -1;
+	}
+	else if (filelist[0] == "no tif")
+	{
+		cout << "Error! No tif-file in directory! Please provide a valid input with the -i argument "
+				"or check https://github.com/iternlm/microtomodenoise for further instruction" << endl;
+		return -1;
+	}
 
 	if (params.io.rgb)
 	{
