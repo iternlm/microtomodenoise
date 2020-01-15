@@ -34,6 +34,11 @@ namespace hdcom
         }
         return (info.st_mode & S_IFDIR) != 0;
     }
+    bool file_exists(const std::string& filename)
+    {
+    	struct stat buffer;
+    	return (stat (filename.c_str(), &buffer) == 0);
+    }
     std::string zfill_int2string(int inint, const unsigned int &zfill)
     {
         std::string outstring = std::to_string(inint);
@@ -48,9 +53,28 @@ namespace hdcom
     	std::vector<std::string> filelist;
 
     	if(hasEnding(path, "tif") || hasEnding(path, "tiff"))
+    	{
     		filelist.push_back(path);
+
+    		if(!file_exists(path)) filelist[0] = "missing";
+    		return filelist;
+    	}
     	else
+    	{
+    		if(!path_exists(path))
+    		{
+    			filelist.push_back("missing");
+    			return filelist;
+    		}
+
     		GetFilelist(path+"/", filelist);
+
+    		if (filelist.size() == 0)
+    		{
+    		    filelist.push_back("no tif");
+    		    return filelist;
+    		}
+    	}
 
     	char *inpath;
 		inpath = new char[filelist[0].length()+1];
