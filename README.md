@@ -131,7 +131,7 @@ Available modes for setting the noise and texture level (*-noise*):
 
 #
 
-Please contact bruns@nano.ku.dk or osholm@nano.ku.dk for assistance, requests or recommendations.
+Please contact stefan.bruns@hereon.de or osho@fysik.dtu.dk for assistance, requests or recommendations.
 
 #
 
@@ -147,5 +147,9 @@ Applications in science:
 * Yang, Y.; Bruns, S.; Stipp, S. L. S.; Sørensen, H. O. *PLoS One* **2018**. “Patterns of entropy production in dissolving natural porous media with flowing fluid”, doi: [10.1371/journal.pone.0204165](https://doi.org/10.1371/journal.pone.0204165).
 * Yang, Y.; Rogowska, M.; Zheng, Y.; Bruns, S.; Gundlach, C.; Stipp, S. L. S.; Sørensen, H. O. *J. Hydrol.* **2019**, 571, 21-35. “Transient increase in reactive surface and the macroscopic Damkohler number in chalk dissolution”, doi: [10.1016/j.jhydrol.2019.01.032](https://doi.org/10.1016/j.jhydrol.2019.01.032).
 * Yang, Y.; Hakim, S. S.; Bruns, S.; Uesugi, K.; Stipp, S. L. S.; Sørensen, H. O. *Water Resour. Res.* **2019**, 55(6), 4801-4819. “Effect of Cumulative Surface on Pore Development in Chalk”, doi: [10.1029/2018WR023756](https://doi.org/10.1029/2018WR023756).
-
+* Zeller-Plumhoff, B.; Robisch, A.-L.; Pelliccia, D.; Longo, E.; Slominska, H.; Hermann, A.; Krenkel, M.; Storm, M.; Estrin, Y.; Willumeit-Römer, R.; Salditt, T.;  Orlov, D. *Sci. Rep.* **2020**, 10,16101. "Nanotomographic evaluation of precipitate structure evolution in a Mg–Zn–Zr alloy during plastic deformation", doi: [10.1038/s41598-020-72964-x](https://doi.org/10.1038/s41598-020-72964-x).
+* Sartori, J.; Kohring, S.; Bruns, S.; Moosmann, J.; Hammel, J.U. *Adv. Eng. Mater.* **2021**, 2100085. "Gaining Insight into the Deformation of Achilles Tendon Entheses in Mice", doi:[10.1002/adem.202100085](https://doi.org/10.1002/adem.202100085).
+* Rasmussen, P.W.; Sørensen, H.O.; Bruns, S.; Dahl, A.B.; Christensen, A.N. *Sci. Rep.* **2021** 11(1), 12501. "Improved dynamic imaging of multiphase flow by constrained tomographic reconstruction", doi: [10.1038/s41598-021-91776-1](https://doi.org/10.1038/s41598-021-91776-1).
+* Schmelzle, S.; Bruns, S.; Beckmann, F.; Moosmann, J.; Lautner, S. *Adv. Eng. Mater.* **2021**, 2100235. "Using In Situ Synchrotron-Radiation-Based Microtomography to Investigate 3D Structure-Dependent Material Properties of Tension Wood", doi:[10.1002/adem.202100235](https://doi.org/10.1002/adem.202100235).
+* Tolnai, D.; Gavras, S.; Wilde, F.; Hammel, J.U.; Bruns, S. *Adv. Eng. Mater.* **2021**, 2100383. "In Situ Synchrotron Tomography of the Solidification of an Elektron 21 Mg Alloy", doi:[10.1002/adem.202100383](https://doi.org/10.1002/adem.202100383).
 
