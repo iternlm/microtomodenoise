@@ -16,6 +16,7 @@
 #include <cstdint>
 #include <fstream>
 #include <sstream>
+#include <math.h>
 
 namespace hdcom
 {
