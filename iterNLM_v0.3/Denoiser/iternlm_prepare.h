@@ -5,6 +5,7 @@
 #include <string.h>
 #include <cstdint>
 #include <vector>
+#include <math.h>
 #include "../denoise_parameters.h"
 
 namespace denoise
