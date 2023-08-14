@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <vector>
 #include "../denoise_parameters.h"
+#include <math.h>
 
 namespace denoise
 {
