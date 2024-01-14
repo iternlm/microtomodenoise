@@ -131,7 +131,7 @@ Available modes for setting the noise and texture level (*-noise*):
 
 #
 
-Please contact stefan.bruns@hereon.de or hosholm@xnovotech.com for assistance, requests or recommendations.
+Please contact sbruns@xnovotech.com or hosholm@xnovotech.com for assistance, requests or recommendations.
 
 #
 
